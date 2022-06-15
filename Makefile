@@ -2,7 +2,11 @@
 
 
 # for convenience, define variable $(OBJS) to list of object files
+<<<<<<< HEAD
 OBJS= draw_shapes.o draw_chars.o 5x7-font.o 12x8-font.o 11x16font.o uimain.o
+=======
+OBJS= draw_shapes.o draw_chars.o 11x16font.o uimain.o
+>>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
 
 # make has a "default rule" specifying how to build a an "object" file (.o) from a C source file (.c)
 #            this rule includes $(CFLAGS) as one of cc's parameters 

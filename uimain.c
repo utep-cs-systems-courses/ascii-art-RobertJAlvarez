@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "draw.h"
 
+<<<<<<< HEAD
 static void options(int *c);
 static int char_options(int *nRows, int *nCols);
 
@@ -56,6 +57,24 @@ int main()
       puts("You selected arrow:");
       print_arrow();
       break;
+=======
+
+int main() 
+{
+  puts("Welcome!");
+
+  while (1) { // Infinite while loop
+
+    fputs("Select which shape you want to print (Triangle = t, Square = s, Chars = c) or 'q' to quit\n> ", stdout);
+    fflush(stdout);		/* stdout only flushes automatically on \n */
+    int c;
+    while ((c = getchar()) == '\n'); /* ignore newlines */
+    if (c == EOF)		     /* terminate on end-of-file */
+      goto done;
+
+    // Given the user answer, select which method to call
+    switch (c) {
+>>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
     case 't':
       puts("You selected triangle:");
       print_triangle(5, 7);
@@ -66,6 +85,7 @@ int main()
       break;
     case 'c':
       puts("You selected chars:");
+<<<<<<< HEAD
       int nRows, nCols;
       if (char_options(&nRows, &nCols)) {
         puts("Enter and ASCII number to print the character.\n");
@@ -80,13 +100,27 @@ int main()
         }
       }
       break;
+=======
+      for (char c = 'A'; c < 'D'; c++)
+	print_char_11x16(c);
+      break;
+    case 'q':
+      puts("Bye!");
+      goto done; 		/* terminate */
+>>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
     case '\n':
       break;
     default:
       printf("Unrecognized option '%c', please try again!\n", c);
     }
+<<<<<<< HEAD
     options(&c);
   }
 
+=======
+  }
+
+ done: // To exit from program
+>>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
   return 0;
 }

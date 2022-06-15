@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include "draw.h"
 
+<<<<<<< HEAD
 void print_arrow()
 {
   print_triangle(5,5);
   print_square(7,7);
 }
 
+=======
+>>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
 /* Prints a size x size square whose left col is at startCol */
 void print_square(int leftCol, int size)
 {
