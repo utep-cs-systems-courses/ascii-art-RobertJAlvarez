@@ -1,23 +1,16 @@
-# comments begin with #
-
-
 # for convenience, define variable $(OBJS) to list of object files
-<<<<<<< HEAD
-OBJS= draw_shapes.o draw_chars.o 5x7-font.o 12x8-font.o 11x16font.o uimain.o
-=======
-OBJS= draw_shapes.o draw_chars.o 11x16font.o uimain.o
->>>>>>> 240304530ab95a5b51c42c5e0b3818b6d42a6994
+OBJS    = draw_shapes.o draw_chars.o 5x7-font.o 12x8-font.o 11x16font.o uimain.o
 
 # make has a "default rule" specifying how to build a an "object" file (.o) from a C source file (.c)
 #            this rule includes $(CFLAGS) as one of cc's parameters 
-CFLAGS=-g -O3 # -g for debug, -O3 for optimization
+CFLAGS  = -g -O3 # -g for debug, -O3 for optimization
 
 # first target is built by default.  Usually named "all"
 all: asciidraw
 
 # asciidraw (target) depends on all object files (prerequisites)
 asciidraw: $(OBJS) 
-	cc -o asciidraw $(CFLAGS) $(OBJS)
+	cc -o $@ $(CFLAGS) $(OBJS)
 
 # all object files built from c files that include draw.h
 $(OBJS): draw.h
@@ -28,3 +21,4 @@ clean:
 
 run:asciidraw
 	./asciidraw
+
